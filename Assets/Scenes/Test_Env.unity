@@ -1603,6 +1603,7 @@ GameObject:
   - component: {fileID: 1664443035}
   - component: {fileID: 1664443034}
   - component: {fileID: 1664443033}
+  - component: {fileID: 1664443036}
   m_Layer: 0
   m_Name: Waterfall
   m_TagString: Untagged
@@ -1617,13 +1618,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664443031}
-  m_LocalRotation: {x: -0.045471635, y: 0.2101426, z: -0.22699611, w: 0.94986594}
-  m_LocalPosition: {x: -1.2299995, y: 0.09000015, z: -2.9499998}
-  m_LocalScale: {x: 0.15988, y: 1.5049001, z: 1.8683997}
+  m_LocalRotation: {x: -0.054145545, y: 0.21220714, z: -0.22506724, w: 0.9494109}
+  m_LocalPosition: {x: -1.128, y: 0.311, z: -2.996}
+  m_LocalScale: {x: 0.15988, y: 0.98479056, z: 1.8683997}
   m_Children: []
   m_Father: {fileID: 1126275406}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0.517, y: 24.827, z: -26.767}
+  m_LocalEulerAnglesHint: {x: -0.418, y: 25.298, z: -26.766}
 --- !u!65 &1664443033
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1656,7 +1657,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c5a4ce1131df41c44ab35f7b4dbd1246, type: 2}
+  - {fileID: 2100000, guid: b0446ee0000256c4d930c738ec4660a7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1686,6 +1687,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664443031}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1664443036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664443031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17940d9287196fe4abc1b9ec7a2c2512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollX: 0
+  scrollY: 2
 --- !u!4 &1678767325 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8106982816533069416, guid: 783d94e6eb351a049b034cda0dbc5fa1, type: 3}
