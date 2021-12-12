@@ -11,7 +11,7 @@ public class Interactable : MonoBehaviour
     [SerializeField] GameObject[] actives; 
     void Start()
     {
-        
+        toggleState = false;
     }
 
     // Update is called once per frame
@@ -20,7 +20,7 @@ public class Interactable : MonoBehaviour
         
     }
 
-    void toggle()
+    public void toggle()
     {
         if(!toggleState) //object is NOT activated
         {

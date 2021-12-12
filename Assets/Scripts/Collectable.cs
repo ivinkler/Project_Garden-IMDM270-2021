@@ -22,9 +22,9 @@ public class Collectable : MonoBehaviour
         found = false;
     }
 
-    void getFound()
+    public void collect()
     {
-        collectable.GetComponent<Transform>().position = home;
+        collectable.GetComponent<Transform>().position = goTo;
         found = true;
         //play sound?
     }
