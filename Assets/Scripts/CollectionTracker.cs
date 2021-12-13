@@ -11,33 +11,39 @@ public class CollectionTracker : MonoBehaviour
 
     [SerializeField] int maxTotal = 4; //the total number of items in this set
 
-    [SerializeField] GameObject[] collectedItems; //the items that have been collected
+    [SerializeField] GameObject finalDoor; //reference to the exit door
+
+    bool exitOpen; //checks if the exit has already been toggled open
 
     void Start()
     {
+        exitOpen = false;
+        complete = false;
         total = 0;
-        collectedItems = new GameObject[maxTotal];
     }
 
 
-    void addItem(GameObject item)
+    public void addItem()
     {
         //do not add item if the collection is complete
         if(complete)
         {
+            if(!exitOpen)
+            {
+                exitOpen = true;
+                finalDoor.GetComponent<DespawnToggle>().activateSequence();
+                finalDoor.GetComponent<Transform>().position = Vector3.zero;
+            }
             return;
         }
-        for(int i = 0; i < maxTotal; i++)
+        else
         {
-            if(collectedItems[i] == null)
-            {
-                collectedItems[i] = item;
-                break;
-            }
+            total++;
         }
+        complete = completeCheck();
     }
-    void completeCheck()
+    bool completeCheck()
     {
-        
+        return total >= maxTotal;
     }
 }

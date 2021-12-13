@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // Spot where the item should be before its found
     [SerializeField] Vector3 home;
+
+    //The collection tracker
+    [SerializeField] CollectionTracker tracker;
+
+    //Spot where the item goes once its found
     [SerializeField] Vector3 goTo;
     [SerializeField] AudioSource fanfare;
 
+    //the item to be picked up
     [SerializeField] GameObject collectable;
     private bool found;
     void Start()
     {
         collectable.GetComponent<Transform>().position = home;
+        tracker = GameObject.Find("hub").GetComponent<CollectionTracker>();
         fanfare = collectable.GetComponent<AudioSource>();
         found = false;
     }
@@ -29,6 +36,7 @@ public class Collectable : MonoBehaviour
        if(!found)
        {
             collectable.GetComponent<Transform>().position = goTo;
+            tracker.addItem();
             found = true;
             fanfare.Play();
        }
