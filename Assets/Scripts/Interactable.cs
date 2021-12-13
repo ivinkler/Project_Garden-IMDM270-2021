@@ -8,7 +8,7 @@ public class Interactable : MonoBehaviour
     /**
     Array of all objects to be "triggered" when the interactable is toggled
     */
-    [SerializeField] GameObject[] actives; 
+    [SerializeField] GameObject[] actives;
     void Start()
     {
         toggleState = false;
@@ -22,21 +22,24 @@ public class Interactable : MonoBehaviour
 
     public void toggle()
     {
-        if(!toggleState) //object is NOT activated
+        if(actives != null)
         {
-            foreach(GameObject active in actives)
+            if(!toggleState) //object is NOT activated
             {
-                active.GetComponent<TriggerableObject>().activateSequence();
+                foreach(GameObject active in actives)
+                {
+                    active.GetComponent<TriggerableObject>().activateSequence();
+                }
+                toggleState = true;
             }
-            toggleState = true;
-        }
-        else
-        {
-            foreach(GameObject active in actives) //object IS activated
+            else
             {
-                active.GetComponent<TriggerableObject>().deactivateSequence();
+                foreach(GameObject active in actives) //object IS activated
+                {
+                    active.GetComponent<TriggerableObject>().deactivateSequence();
+                }
+                toggleState = false;
             }
-            toggleState = false;
         }
     }
 }
